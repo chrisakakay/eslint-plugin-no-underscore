@@ -36,7 +36,7 @@ module.exports = {
                 }
 
                 function isConstant(text) {
-                    return text === text.toUpperCase();
+                    return text === text.toUpperCase() && text[0] !== '_';
                 }
 
                 function report(node) {
