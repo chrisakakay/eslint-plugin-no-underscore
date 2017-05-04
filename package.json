@@ -1,0 +1,28 @@
+{
+  "name": "eslint-plugin-no-underscore",
+  "version": "0.1.0",
+  "description": "Eslint rules for underscores",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint ./"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js"
+  ],
+  "author": "Krisztian Nagy",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "jest": "^19.0.2"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "underscore"
+  ]
+}
