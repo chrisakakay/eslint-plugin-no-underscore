@@ -1,8 +1,15 @@
 {
   "name": "eslint-plugin-no-underscore",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Eslint rules for underscores",
   "main": "index.js",
+  "author": "Krisztian Nagy <chrisakakay@gmail.com> (http://chrisakakay.github.io/)",
+  "homepage": "https://github.com/chrisakakay/eslint-plugin-no-underscore",
+  "repository": "chrisakakay/eslint-plugin-no-underscore",
+  "bugs": {
+    "url": "https://github.com/chrisakakay/eslint-plugin-no-underscore/issues",
+    "email": "chrisakakay@gmail.com"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",

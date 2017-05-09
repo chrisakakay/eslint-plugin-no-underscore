@@ -15,6 +15,8 @@ const ruleTester = new RuleTester();
 ruleTester.run('no-underscore', rule, {
     valid: [
         'var aName = 3;',
+        'var aName = "URLAPI";',
+        'var aName = "URL_UNDERSCORE";',
         '_.map([1,], function(n) { return n; });',
         {
             code: 'var CONST_NAME = 3;',
@@ -65,6 +67,14 @@ ruleTester.run('no-underscore', rule, {
             errors: [{
                 message: `Underscore found in '_a_name'`,
                 type: 'Identifier'
+            }]
+        },
+        {
+            code: 'var aName = "something_underscored";',
+            options: [{ disallowValues: true }],
+            errors: [{
+                message: `Underscore found in 'something_underscored'`,
+                type: 'Literal'
             }]
         },
         {

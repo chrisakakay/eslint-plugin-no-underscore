@@ -22,6 +22,9 @@ module.exports = {
                         },
                         allowLeadingUnderscores: {
                             type: 'boolean'
+                        },
+                        disallowValues: {
+                            type: 'boolean'
                         }
                     },
                     additionalProperties: false
@@ -39,10 +42,10 @@ module.exports = {
                     return text === text.toUpperCase() && text[0] !== '_';
                 }
 
-                function report(node) {
+                function report(node, msg) {
                     context.report({
                         node,
-                        message: `Underscore found in '${node.name}'`
+                        message: `Underscore found in '${msg}'`
                     });
                 }
 
@@ -57,7 +60,14 @@ module.exports = {
                         if (options.allowConstants && isConstant(name)) return;
                         if (!hasUnderscore(name)) return;
 
-                        report(node);
+                        report(node, node.name);
+                    },
+
+                    Literal: (node) => {
+                        if (!options.disallowValues) return;
+                        if (typeof node.value === 'string' && !hasUnderscore(node.value)) return;
+
+                        report(node, node.value);
                     }
                 }
             }
