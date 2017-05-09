@@ -40,6 +40,7 @@ Enable the rule:
 
 * allowConstants [bool], (ex.: API_URL)
 * allowLeadingUnderscores [bool], (ex.: _myFancyLocalVariable)
+* disallowValues [bool], (ex.: var a = 'abc_def';)
 
 
 
